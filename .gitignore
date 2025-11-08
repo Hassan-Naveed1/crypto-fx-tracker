@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Venv
+.venv/
+
+# Env files
+.env
+.env.*
+
+# SQLite DB (keep schema.sql)
+db/*.db
+*.sqlite
+*.sqlite3
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

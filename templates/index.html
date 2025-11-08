@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Crypto & Currency Tracker</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+  <header>
+    <h1>Crypto & Currency Tracker</h1>
+    <p>Live prices from CoinGecko · Fiat FX via ExchangeRate.host</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div><label>Coins:</label> <input id="coins" value="{{ default_coins }}"></div>
+      <div><label>VS:</label> <input id="vs" value="{{ default_vs }}"></div>
+      <button id="btn-refresh">Refresh</button>
+    </section>
+
+    <section class="cards" id="price-cards"></section>
+
+    <section class="chart">
+      <h2 id="chart-title">Price (7d)</h2>
+      <canvas id="priceChart"></canvas>
+    </section>
+
+    <section class="watchlist">
+      <h2>Watchlist</h2>
+      <form id="add-form">
+        <input name="coin_id" placeholder="coin_id" required>
+        <input name="symbol" placeholder="symbol" required>
+        <input name="name" placeholder="name" required>
+        <input name="target_price" placeholder="target price" type="number" step="0.0001">
+        <label><input type="checkbox" name="alert_enabled"> Alert?</label>
+        <button type="submit">Add</button>
+      </form>
+      <div id="watchlist-table"></div>
+    </section>
+  </main>
+
+  <footer><small>Base {{ base_fiat }}</small></footer>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

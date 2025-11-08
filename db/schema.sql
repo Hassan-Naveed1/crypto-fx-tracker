@@ -1,0 +1,11 @@
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS watchlist(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  coin_id TEXT NOT NULL UNIQUE,
+  symbol TEXT NOT NULL,
+  name TEXT NOT NULL,
+  target_price REAL,
+  alert_enabled INTEGER DEFAULT 0,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
