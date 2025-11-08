@@ -8,6 +8,8 @@ __pycache__/
 # Env files
 .env
 .env.*
+*.env
+!.env.example
 
 # SQLite DB (keep schema.sql)
 db/*.db
